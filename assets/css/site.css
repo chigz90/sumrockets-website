@@ -25,8 +25,6 @@
   --yellow-edge: #d99a1e;
   --green: #1b7f4f;
   --green-soft: #e3f5ec;
-  --todo-bg: #fff1a8;
-  --todo-ink: #5c4300;
   --radius: 22px;
   --shadow: 0 4px 0 rgba(36, 48, 74, 0.12);
   color-scheme: light dark;
@@ -83,7 +81,7 @@ a:hover { text-decoration-thickness: 2px; }
 .wrap { width: min(1120px, 100% - 32px); margin-inline: auto; }
 
 h1, h2, h3 { line-height: 1.15; margin: 0 0 0.5em; font-weight: 900; letter-spacing: -0.01em; }
-h1 { font-size: clamp(2.3rem, 7vw, 4.2rem); }
+h1 { font-size: clamp(2rem, 8.6vw, 4.2rem); text-wrap: balance; }
 h2 { font-size: clamp(1.7rem, 4.5vw, 2.6rem); }
 h3 { font-size: 1.25rem; }
 
@@ -139,7 +137,7 @@ h3 { font-size: 1.25rem; }
 .hero__grid { display: grid; gap: 32px; align-items: center; }
 .hero__copy p.lede { font-size: clamp(1.15rem, 2.6vw, 1.4rem); font-weight: 700; margin: 0 0 28px; max-width: 34ch; }
 .hero__art { position: relative; display: flex; justify-content: center; min-height: 420px; }
-.hero__mascot { position: absolute; left: -4%; top: 0; width: min(62%, 330px); z-index: 2; }
+.hero__mascot { position: absolute; left: -10%; top: -30px; width: min(76%, 400px); z-index: 2; }
 @media (prefers-reduced-motion: no-preference) {
   .hero__mascot { animation: float 5s ease-in-out infinite; }
 }
@@ -176,11 +174,11 @@ h3 { font-size: 1.25rem; }
   border: 1px solid var(--line); box-shadow: var(--shadow);
   overflow: hidden; display: flex; flex-direction: column;
 }
-.card__img { background: linear-gradient(135deg, var(--space-1), var(--space-3)); height: 260px; overflow: hidden; }
-.card__img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 38%; }
+.card__img { aspect-ratio: 760 / 564; overflow: hidden; }
+.card__img img { width: 100%; height: 100%; object-fit: cover; }
 .nowrap { white-space: nowrap; }
 .card__body { padding: 18px 20px 22px; }
-.card__icon { font-size: 1.6rem; line-height: 1; margin-bottom: 8px; }
+.card__icon { display: block; color: var(--brand-text); margin-bottom: 10px; }
 .card__body p { margin: 0; color: var(--muted); }
 
 /* Screenshot strip: CSS scroll-snap only. */
@@ -228,13 +226,6 @@ h3 { font-size: 1.25rem; }
 .prose th { font-weight: 900; }
 .table-scroll { overflow-x: auto; }
 .callout { background: var(--green-soft); border-radius: 16px; padding: 16px 20px; font-weight: 700; }
-
-/* Anything that must be filled in before going live. */
-.todo {
-  background: var(--todo-bg); color: var(--todo-ink);
-  font-weight: 900; padding: 1px 6px; border-radius: 6px;
-  outline: 2px dashed var(--todo-ink);
-}
 
 /* FAQ accordion: <details>, no JS. */
 .faq details {
